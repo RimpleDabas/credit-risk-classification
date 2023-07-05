@@ -9,26 +9,27 @@
 - The values to be predited from model were the `0` (healthy loan) and `1` (high-risk loan) labels 
 - Following steps were performed :
    - Read the file `lending_data.csv`
-   - Create the labels set (y) from the “loan_status” column, and then create the features (X) DataFrame from the remaining columns.
-* Describe the stages of the machine learning process you went through as part of this analysis.
-* Briefly touch on any methods you used (e.g., `LogisticRegression`, or any resampling method).
+   - Create the labels set `y` from the “loan_status” column, and then create the features `X` DataFrame from the remaining columns.
+   - Split the data into training and testing datasets by using `train_test_split`.
+   - Fit a logistic regression model by using the training data (`X_train` and `y_train`).
+   - Evaluate the model’s performance by calculating  the accuracy score of the model, generating a confusion matrix and printing the classification report.
+   - Repeat same process using Logistic Regression Model with Resampled Training Data
+
 
 ## Results
 
 Using bulleted lists, describe the balanced accuracy scores and the precision and recall scores of all machine learning models.
 
-* Machine Learning Model 1:
-  * Description of Model 1 Accuracy, Precision, and Recall scores.
-
-
+* Machine Learning Model 1 (logistic regression model):
+  The model performs well with accuracy of 99% overall. If we compare , it does well in predicting healthy loans with good recall and f-1 score. For high risk loans there is a room for improvement as it predicts with 87% accuracy which is also reflected by recall and f-1 scores.
 
 * Machine Learning Model 2:
-  * Description of Model 2 Accuracy, Precision, and Recall scores.
+  In comparison the model fit with oversampled data does well in accuracy although the precision is 94% . The recall and f1-scores for prediction of healthy loans is still better than high risks loans prediction as high recall correlates to a more comprehensive output and a low false negative rate.
 
 ## Summary
 
-Summarize the results of the machine learning models, and include a recommendation on the model to use, if any. For example:
-* Which one seems to perform best? How do you know it performs best?
-* Does performance depend on the problem we are trying to solve? (For example, is it more important to predict the `1`'s, or predict the `0`'s? )
+ - Model with oversampled data fit has good overall accuracy than the model 1 for prediction of both labels
+ - If we look at the performance for the high risk loans predictions, it has high recall and f1 scores which means it is able to identify correctly the high risk loans than the model 1.
+ - Another thing to notice is that dataset is unbalanced since 75036 out of 19384 examples belong to class 0 (that is 96%). Therefore, achieves very high scores like precision and recall for class 0 and very low scores for class 1. So, the performance depends on the problem we are trying to solve i.e. what is more important to predict 1 or 0.
 
-If you do not recommend any of the models, please justify your reasoning.
+Based on the above arguments Model 2 with oversampled sata is preferred over model 1. 
