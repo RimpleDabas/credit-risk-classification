@@ -21,11 +21,13 @@
 * Machine Learning Model 1 (logistic regression model): 
 
 ![image](Images/logistic%20regression%20cr.png)
+
   The model performs well with accuracy of 99% overall. If we compare , it does well in predicting healthy loans with good recall and f-1 score. For high risk loans there is a room for improvement as it predicts with 87% precision which is also reflected by recall and f-1 scores.
 
 * Machine Learning Model 2:
 
 ![image](Images/sampler%20cr.png)
+
   In comparison the model fit with oversampled data does well in accuracy although the precision is 94% . The recall and f1-scores for prediction of healthy loans is still better than high risks loans prediction as high recall correlates to a more comprehensive output and a low false negative rate.
 
 ## Summary
